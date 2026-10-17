@@ -9,6 +9,7 @@ const __dirname = import.meta.dirname;
 
 app.use('/new', newMessageRouter);
 app.use('/', indexRouter);
+app.use(express.urlencoded({ extended: true }));
 
 app.listen(PORT, (error) => {
 	if (error) {
