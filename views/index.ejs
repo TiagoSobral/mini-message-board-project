@@ -2,7 +2,7 @@
 	<body>
     <ul>
     <% messages.map((message) => { %>
-      <li><%= message.text %></li>
+      <li><%= message.user %>: '<%= message.text %>' written on '<%= message.added %>' </li>
     <% })%></ul>
   </body>
 </html>

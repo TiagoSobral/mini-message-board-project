@@ -7,7 +7,7 @@ const app = express();
 const PORT = 3000;
 const __dirname = import.meta.dirname;
 
-app.use('/new-message', newMessageRouter);
+app.use('/new', newMessageRouter);
 app.use('/', indexRouter);
 
 app.listen(PORT, (error) => {
