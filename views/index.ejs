@@ -2,7 +2,8 @@
 	<body>
     <ul>
     <% messages.map((message) => { %>
-      <li><%= message.user %>: '<%= message.text %>' written on '<%= message.added %>' </li>
+      <li><%= message.user %>: '<%= message.text %>' written on '<%= message.added %>'  <button><a href="/message/<%= message.id %>">Expand</a></button></li>
+
     <% })%></ul>
    <a href="/new">New Message</a>
   </body>

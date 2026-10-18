@@ -10,6 +10,11 @@ newMessageRouter.get('/', (req, res) => {
 newMessageRouter.post('/', (req, res) => {
 	const messageInput = req.body.messageInput;
 	const nameInput = req.body.nameInput;
-	messages.push({ text: messageInput, user: nameInput, added: new Date() });
+	messages.push({
+		id: 3,
+		text: messageInput,
+		user: nameInput,
+		added: new Date(),
+	});
 	res.redirect('/');
 });
