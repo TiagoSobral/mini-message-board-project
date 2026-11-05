@@ -1,5 +1,4 @@
 import express from 'express';
-import { messages } from '../database/messages.js';
 
 export const messageExpand = express.Router();
 

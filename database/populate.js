@@ -19,3 +19,5 @@ async function main() {
 	await client.end();
 	console.log('done');
 }
+
+main();

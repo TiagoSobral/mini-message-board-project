@@ -1,5 +1,5 @@
 import express from 'express';
-import { messages } from '../database/messages.js';
+import { addMessage } from '../controllers/messageController.js';
 
 export const newMessageRouter = express.Router();
 
@@ -7,14 +7,4 @@ newMessageRouter.get('/', (req, res) => {
 	res.render('form');
 });
 
-newMessageRouter.post('/', (req, res) => {
-	const messageInput = req.body.messageInput;
-	const nameInput = req.body.nameInput;
-	messages.push({
-		id: 3,
-		text: messageInput,
-		user: nameInput,
-		added: new Date(),
-	});
-	res.redirect('/');
-});
+newMessageRouter.post('/', addMessage);
