@@ -1,4 +1,8 @@
-import { createNewMessage } from '../database/queries.js';
+import {
+	createNewMessage,
+	getAllMessages,
+	getMessage,
+} from '../database/queries.js';
 
 async function addMessage(req, res) {
 	const text = req.body.messageInput;
@@ -7,4 +11,17 @@ async function addMessage(req, res) {
 	res.redirect('/');
 }
 
-export { addMessage };
+async function showAllMessages(req, res) {
+	const messages = await getAllMessages();
+	res.render('index', { messages: messages });
+}
+
+async function seeMessage(req, res) {
+	const id = req.params.id;
+	const message = await getMessage(id);
+	res.render('messageDetail', {
+		message: message,
+	});
+}
+
+export { addMessage, showAllMessages, seeMessage };
