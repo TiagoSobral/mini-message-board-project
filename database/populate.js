@@ -5,9 +5,9 @@ import { Database_url } from './pool.js';
 const TABLE = `
 CREATE TABLE IF NOT EXISTS messages (
 id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
-user VARCHAR(255),
+username VARCHAR(255),
 text VARCHAR(255), 
-date INT);`;
+added INT);`;
 
 async function main() {
 	console.log('seeding...');

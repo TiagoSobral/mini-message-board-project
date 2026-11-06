@@ -13,11 +13,11 @@ async function getMessage(id) {
 }
 
 async function createNewMessage(obj) {
-	const { user, text } = obj;
-	const date = new Date();
+	const { username, text } = obj;
+	const added = new Date();
 	await pool.query(
-		'INSERT INTO messages(user, text, added) VALUES($1, $2, $3)',
-		[user, text, date],
+		'INSERT INTO messages(username, text, added) VALUES($1, $2, $3)',
+		[username, text, added],
 	);
 }
 
