@@ -14,7 +14,7 @@ async function getMessage(id) {
 
 async function createNewMessage(obj) {
 	const { username, text } = obj;
-	const added = new Date();
+	const added = `${new Date()}`;
 	await pool.query(
 		'INSERT INTO messages(username, text, added) VALUES($1, $2, $3)',
 		[username, text, added],

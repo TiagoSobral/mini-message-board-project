@@ -6,8 +6,9 @@ const TABLE = `
 CREATE TABLE IF NOT EXISTS messages (
 id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
 username VARCHAR(255),
-text VARCHAR(255), 
-added INT);`;
+text VARCHAR(255),
+added VARCHAR(255));
+`;
 
 async function main() {
 	console.log('seeding...');
