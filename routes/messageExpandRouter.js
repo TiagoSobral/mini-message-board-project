@@ -1,8 +1,6 @@
 import express from 'express';
+import { getMessage } from '../database/queries.js';
 
 export const messageExpand = express.Router();
 
-messageExpand.get('/:messageId', (req, res) => {
-	const id = req.params.messageId;
-	res.render('messageDetail', { message: messages[id] });
-});
+messageExpand.get('/:messageId', getMessage);
